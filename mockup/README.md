@@ -37,14 +37,14 @@ Attraction routes:
 - Show: /attractions/:id (GET: show details of one attraction)
 - Edit: /attractions/:id/edit (GET: render the update page)
 - Update: /attractions/:id (PATCH: updates the current attraction)
-- Delete: /attractions/id (DELETE: deletes current attraction)
+- Delete: /attractions/:id (DELETE: deletes current attraction)
 
 
 ### User stories
 - As a user, I'd like to view all Austin attractions so I can see what there is to do in the area
 - As a user, I'd like to view a details page for each attraction so I can see all the information about a given activity
 - As a user, I'd like to view comments about each attraction from other visitors so I can prioritize which attractions I'd like to visit
-- As a user
+- As a user, I'd like to add and edit attractions so I can build a database of the best things to do in Austin
 
 ### Wireframes
 ![1_index](../mockup/wireframes/1_index.JPG)
