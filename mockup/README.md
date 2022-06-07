@@ -18,6 +18,7 @@ Having just moved to Austin, TX, I want to build an app that lists the top attra
 ### List of Mongoose models and their properties
 - AttractionSchema: {
     title: String,
+    address: String,
     description: String,
     image: Buffer(?)
     comments: [CommentSchema]
@@ -46,3 +47,5 @@ Attraction routes:
 - As a user
 
 ### Wireframes
+![1_index](../mockup/wireframes/1_index.JPG)
+![2_show](../mockup/wireframes/2_show.JPG)
