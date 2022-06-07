@@ -3,20 +3,40 @@
 Having just moved to Austin, TX, I want to build an app that lists the top attractions and things to do here. Each attraction will have a photo you can click on, which will take you to a detail page describing that attraction, along with comments from users. 
 
 ### MVP
-- User can visit 
-- 
+- User can visit the website and view Austin attractions
+- User can click through and see attraction details and comments from other visitors
+- User can create new Austin attractions and add to the list of Austin attractions
 
 ### Stretch Goals
-- User can login using 
+- User can login using Google, Facebook, Twitter
+- User can favorite attractions
+- Use Multer to upload photos
 
 ### Front-end
 - Planning to use EJS
 
 ### List of Mongoose models and their properties
+- AttractionSchema: {
+    title: String,
+    description: String,
+    image: Buffer(?)
+    comments: [CommentSchema]
+}
 
-
+- CommentSchema: {
+    content: String,
+    rating: type: number, min, max
+}
 
 ### List of Routes
+Attraction routes:
+- Index: /attractions (GET: display all attractions)
+- New: /attractions/new (GET: renders form to create a new attraction)
+- Create: /attractions (POST: make a new attraction)
+- Show: /attractions/:id (GET: show details of one attraction)
+- Edit: /attractions/:id/edit (GET: render the update page)
+- Update: /attractions/:id (PATCH: updates the current attraction)
+- Delete: /attractions/id (DELETE: deletes current attraction)
 
 
 ### User stories
