@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
+const {commentSchema} = require('./comments')
 
 const AttractionSchema = new mongoose.Schema({
     title: String,
     address: String,
     description: String,
-    // comments: [CommentSchema]
+    comments: [commentSchema]
     // img:
     // {
     //     // From https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/
