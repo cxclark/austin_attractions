@@ -5,7 +5,6 @@
 // Get photos to display on website
 // Find Bootstrap nav bar template
 // Find Bootstrap card tiles template
-// 
 
 
 const express = require('express')
