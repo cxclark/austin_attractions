@@ -33,7 +33,7 @@ app.use(methodOverride('_method'));
 
 // Routes start here
 app.use('/attractions', attractionRoutes)
-app.use('/comments', commentRoutes)
+// app.use('/comments', commentRoutes)
 
 // Routes ened here
 

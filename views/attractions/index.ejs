@@ -11,7 +11,8 @@
       </tr>
     </thead>
 
-    <tbody>
+    <div>
+      <tbody>
       <% attractions.forEach(function(attraction) { %>
         <tr>
           <td>
@@ -28,6 +29,11 @@
           </td>
         </tr>
         <% }); %>
-    </tbody>
+      </tbody>
+    </div>
+
+    <div>
+      <a href="/attractions/new">Create a New Attraction</a>
+    </div>
 
   </table>

@@ -4,7 +4,7 @@ const attractionCtrl = require('../controllers/attractionController')
 
 router.get('/', attractionCtrl.index);
 
-router.get('/new', attractionCtrl.newAttraction);
+router.get('/new', attractionCtrl.showNewForm);
 
 router.post('/', attractionCtrl.create);
 

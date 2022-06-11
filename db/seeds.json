@@ -2,7 +2,11 @@
     {
        "title": "Zilker Metropolitan Park",
        "address": "2100 Barton Springs Rd",
-       "description": "Zilker Park is a 361-acre park nestled in the heart of downtown, right off Lady Bird Lake. The park was founded in 1917 and is home to picnic facilities, bike/canoe rentals, a disc golf course, a large playground for children, the Zilker Zephyr train and Barton Springs Pool, an urban oasis where swimmers plunge into 68-degree, spring-fed waters. The park is also the host to great events like the Austin City Limits Music Festival and the Austin Kite Festival."
+       "description": "Zilker Park is a 361-acre park nestled in the heart of downtown, right off Lady Bird Lake. The park was founded in 1917 and is home to picnic facilities, bike/canoe rentals, a disc golf course, a large playground for children, the Zilker Zephyr train and Barton Springs Pool, an urban oasis where swimmers plunge into 68-degree, spring-fed waters. The park is also the host to great events like the Austin City Limits Music Festival and the Austin Kite Festival.",
+       "comments": {
+          "content": "I love Zilker Park!",
+          "rating": 5
+       }
     },
     {
        "title": "Texas State Capitol",

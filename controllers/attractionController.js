@@ -27,7 +27,7 @@ let show = (req, res) => {
 }
 
 // New = render form to create new attraction
-let newAttraction = (req, res) => {
+let showNewForm = (req, res) => {
     res.render('attractions/new')
 }
 
@@ -69,22 +69,22 @@ async function update(req, res) {
     await Attraction.findByIdAndUpdate(req.params.id, req.body);
     res.redirect(`/attractions/${req.params.id}`)
 }
-let update = (req, res) => {
-    for (const key in req.body) {
-        if (req.body[key] === '') delete req.body[key];
-    }
+// let update = (req, res) => {
+//     for (const key in req.body) {
+//         if (req.body[key] === '') delete req.body[key];
+//     }
     // Attraction.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, attraction) => {
     //     if(err){
     //         res.status(400).json(err)
     //     }
     //     res.json(attraction)
     // })
-}
+// }
 
 
 module.exports  = {
     index,
-    newAttraction,
+    showNewForm,
     create,
     show,
     deleteAttraction,

@@ -1,14 +1,29 @@
-const Comment = require('../models/comments')
+const Attraction = require('../models/attractions')
 
 let create = (req, res) => {
-    Comment.create(req.body, (err, comment) =>{
-        if(err){
-            res.status(400).json(err)
-            return
+    console.log(req.params)
+    Attraction.findById(
+        req.params.id,
+        function (err, attraction) {
+            console.log(req.body)
+            attraction.comments.push(req.body);
+            attraction.save(function(err) {
+                if (err) {
+                    console.log(err);
+                }
+                res.redirect(`/attractions/${attraction._id}`);
+            });
         }
-        res.json(comment)
-    })
+    );
 }
+//     Comment.create(req.body, (err, comment) =>{
+//         if(err){
+//             res.status(400).json(err)
+//             return
+//         }
+//         res.json(comment)
+//     })
+// }
 
 module.exports = {
     create

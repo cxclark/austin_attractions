@@ -3,17 +3,11 @@
  </h1>
 
  <section id="show-page">
-    <div>Address: </div>
-    <div>
-      <%= attraction.address %>
-    </div>
-    <div>Description: </div>
-    <div>
-      <%= attraction.description %>
-    </div>
+    <div>Address: <%= attraction.address %></div>
+    <div>Description: <%= attraction.description %></div>
   </section>
   
-  <button><a href="/cats/<%=attraction._id%>/edit"></a>Edit Attraction</button>
+  <a href="/attractions/<%=attraction._id%>/edit"><button>Edit Attraction</button></a>
 
   <form method="POST" action="/attractions/<%=attraction._id%>?_method=DELETE">
     <input type="submit" value="Delete Attraction">
@@ -21,7 +15,7 @@
 
   <br><br>
   <h2>Comments</h2>
-  <form id="add-review-form" method="POST" action="/attractions/<%= attraction._id %>/comments">
+  <form id="add-comment-form" method="POST" action="/attractions/<%= attraction._id %>/comments">
     <label>Comment:</label>
     <textarea name="content"></textarea>
     <label>Rating:</label>
@@ -34,3 +28,28 @@
     </select>
     <input type="submit" value="Add Comment">
   </form>
+
+  <% if (attraction.comments.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Comment</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% attraction.comments.forEach(function(comment) { %>
+          <tr>
+            <td>
+              <%= comment.content %>
+            </td>
+            <td>
+              <%= comment.rating %>
+            </td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+      <h5>No Comments Yet</h5>
+      <% } %>

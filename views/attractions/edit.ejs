@@ -3,14 +3,8 @@
 </h1>
 
 <section id="edit-page">
-    <div>Address: </div>
-    <div>
-      <%= attraction.address %>
-    </div>
-    <div>Description: </div>
-    <div>
-      <%= attraction.description %>
-    </div>
+    <div>Address: <%= attraction.address %></div>
+    <div>Description: <%= attraction.description %></div>
   </section>
 
   <form method="POST" action="/attractions/<%=attraction._id%>?_method=PUT">
