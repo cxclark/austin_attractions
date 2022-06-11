@@ -5,10 +5,12 @@
 // 6-11: Get photos to display on website
 // 6-11: Find Bootstrap nav bar template
 // 6-11: Find Bootstrap card tiles template
+// 6-12: Set up O-Auth and login stuff
 // 6-12: Sign up for Atlas and host database
-// 6-12: Sign up for Heroku, and install
+// 6-14: Sign up for Heroku, and install: https://git.generalassemb.ly/Flex-322/Heroku_Atlas_Deployment_cheatsheet
 
 const express = require('express')
+const path = require('path');
 const PORT = 7000
 const app = express()
 const attractionRoutes = require('./routes/attractionRoutes')
@@ -16,6 +18,10 @@ const commentRoutes = require('./routes/commentRoutes')
 
 // Require DB connection
 require('./db/connection')
+
+// View engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // Middlewares start here
 app.use(express.json());

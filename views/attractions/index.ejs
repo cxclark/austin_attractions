@@ -1,0 +1,22 @@
+<table id="list">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Release<br>Year</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% attractions.forEach(function(m) { %>
+        <tr>
+          <td>
+            <%= m.title %>
+          </td>
+          <td>
+            <%= m.address %>
+          </td>
+          <td><a href="/movies/<%= m._id %>">DETAILS</a></td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>

@@ -5,11 +5,12 @@ const Attraction = require('../models/attractions')
 let index = (req, res) => {
     // Respond with the attractions
     Attraction.find({}, (err, attractions) => {
-        if(err){
-            res.status(400).json(err)
-            return
-        }
-        res.json(attractions)
+        res.render('attractions/index', {attractions})
+        // if(err){
+        //     res.status(400).json(err)
+        //     return
+        // }
+        // res.json(attractions)
     })
 }
 
