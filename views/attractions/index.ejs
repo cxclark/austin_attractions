@@ -1,22 +1,33 @@
+<h1>Austin Attractions</h1>
+
 <table id="list">
+
     <thead>
       <tr>
         <th>Title</th>
-        <th>Release<br>Year</th>
+        <th>Address</th>
+        <th>Description</th>
         <th></th>
       </tr>
     </thead>
+
     <tbody>
-      <% attractions.forEach(function(m) { %>
+      <% attractions.forEach(function(attraction) { %>
         <tr>
           <td>
-            <%= m.title %>
+            <%= attraction.title %>
           </td>
           <td>
-            <%= m.address %>
+            <%= attraction.address %>
           </td>
-          <td><a href="/movies/<%= m._id %>">DETAILS</a></td>
+          <td>
+            <%= attraction.description %>
+          </td>
+          <td>
+            <a href="/attractions/<%= attraction._id %>">DETAILS</a>
+          </td>
         </tr>
         <% }); %>
     </tbody>
+
   </table>

@@ -2,14 +2,18 @@ const express = require('express')
 const router = express.Router()
 const attractionCtrl = require('../controllers/attractionController')
 
-router.get('/', attractionCtrl.index)
+router.get('/', attractionCtrl.index);
 
-router.post('/', attractionCtrl.create)
+router.get('/new', attractionCtrl.newAttraction);
 
-router.get('/:id', attractionCtrl.show)
+router.post('/', attractionCtrl.create);
 
-router.put('/:id', attractionCtrl.update)
+router.get('/:id', attractionCtrl.show);
 
-router.delete('/:id', attractionCtrl.deleteAttraction)
+router.get('/:id/edit', attractionCtrl.showUpdateForm)
+
+router.put('/:id', attractionCtrl.update);
+
+router.delete('/:id', attractionCtrl.deleteAttraction);
 
 module.exports = router

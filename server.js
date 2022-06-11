@@ -15,6 +15,7 @@ const PORT = 7000
 const app = express()
 const attractionRoutes = require('./routes/attractionRoutes')
 const commentRoutes = require('./routes/commentRoutes')
+const methodOverride = require('method-override')
 
 // Require DB connection
 require('./db/connection')
@@ -26,7 +27,7 @@ app.set('view engine', 'ejs');
 // Middlewares start here
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-
+app.use(methodOverride('_method'));
 
 // Middlewares end here
 

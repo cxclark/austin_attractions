@@ -1,0 +1,21 @@
+<h1>
+    Edit "<%= attraction.title %>"
+</h1>
+
+<section id="edit-page">
+    <div>Address: </div>
+    <div>
+      <%= attraction.address %>
+    </div>
+    <div>Description: </div>
+    <div>
+      <%= attraction.description %>
+    </div>
+  </section>
+
+  <form method="POST" action="/attractions/<%=attraction._id%>?_method=PUT">
+    Title: <input name="title" type="text">
+    Address: <input name="address" type="text">
+    Description: <input name="description" type="text">
+    <input type="submit" value="Edit Attraction">
+    </form>
