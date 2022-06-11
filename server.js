@@ -1,11 +1,12 @@
-// Finalize backend schemas
-// Create EJS and render pages for website
-// Create Partial EJS's for header and footers
-// Set up Multr and Cloudinary for photos
-// Get photos to display on website
-// Find Bootstrap nav bar template
-// Find Bootstrap card tiles template
-
+// 6-11: Finalize backend schemas
+// 6-11: Create EJS and render pages for website
+// 6-11: Create Partial EJS's for header and footers
+// 6-11: Set up Multr and Cloudinary for photos
+// 6-11: Get photos to display on website
+// 6-11: Find Bootstrap nav bar template
+// 6-11: Find Bootstrap card tiles template
+// 6-12: Sign up for Atlas and host database
+// 6-12: Sign up for Heroku, and install
 
 const express = require('express')
 const PORT = 7000
