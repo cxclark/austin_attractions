@@ -1,4 +1,4 @@
-// 6-11: Finalize backend schemas
+// DONE 6-11: Finalize backend schemas
 // 6-11: Create EJS and render pages for website
 // 6-11: Create Partial EJS's for header and footers
 // 6-11: Set up Multr and Cloudinary for photos
@@ -8,6 +8,7 @@
 // 6-12: Set up O-Auth and login stuff
 // 6-12: Sign up for Atlas and host database
 // 6-14: Sign up for Heroku, and install: https://git.generalassemb.ly/Flex-322/Heroku_Atlas_Deployment_cheatsheet
+// Uninstall dotenv?
 
 const express = require('express')
 const path = require('path');
@@ -16,6 +17,12 @@ const app = express()
 const attractionRoutes = require('./routes/attractionRoutes')
 const commentRoutes = require('./routes/commentRoutes')
 const methodOverride = require('method-override')
+const logger = require('morgan')
+
+// Cloudinary and Multer
+// https://www.youtube.com/watch?v=LWB1s6P0wgE&ab_channel=FarhanFarooq
+const dotenv = require('dotenv')
+dotenv.config();
 
 // Require DB connection
 require('./db/connection')
@@ -25,6 +32,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Middlewares start here
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
@@ -33,7 +41,7 @@ app.use(methodOverride('_method'));
 
 // Routes start here
 app.use('/attractions', attractionRoutes)
-// app.use('/comments', commentRoutes)
+app.use('/attractions', commentRoutes)
 
 // Routes ened here
 

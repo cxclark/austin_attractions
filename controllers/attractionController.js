@@ -1,6 +1,13 @@
 // Bring in attraction model
 const Attraction = require('../models/attractions')
 
+// Cloudinary & Multer
+// https://www.youtube.com/watch?v=LWB1s6P0wgE&ab_channel=FarhanFarooq
+// But moved from Routes to Controller...
+const cloudinary = require('../utils/cloudinary');
+const upload = require('../utils/multer');
+
+
 // Index = get all attractions
 let index = (req, res) => {
     // Respond with the attractions
@@ -31,26 +38,55 @@ let showNewForm = (req, res) => {
     res.render('attractions/new')
 }
 
-// Create = create a new attraction in teh database
-let create = (req, res) => {
-    const attraction = new Attraction(req.body);
-    attraction.save(function (err) {
-        if(err) return res.redirect('/attractions/new');
-        res.redirect('/attractions');
-    })
-    // Attraction.create(req.body, (err, attraction) => {
-        // if(err){
-        //     res.status(400).json(err)
-        //     return
-        // }
-        // res.json(attraction)
-    // })
+
+// Trying to Cloudinary/Multer form of create
+async function create(req, res) {
+    try {
+        const result = await cloudinary.uploader.upload(req.file.path)
+        
+        let attraction = new Attraction({
+            title: req.body.title,
+            address: req.body.address,
+            description: req.body.description,
+            image: result.secure_url,
+            cloudinary_id: result.public_id
+        })
+        await attraction.save();
+        res.json(attraction);
+
+    } catch (err) {
+        console.log(err);
+    }
 }
+// // Create = create a new attraction in the database
+// let create = (req, res) => {
+//     const attraction = new Attraction(req.body);
+//     attraction.save(function (err) {
+//         if(err) return res.redirect('/attractions/new');
+//         res.redirect('/attractions');
+//     })
+//     // Attraction.create(req.body, (err, attraction) => {
+//         // if(err){
+//         //     res.status(400).json(err)
+//         //     return
+//         // }
+//         // res.json(attraction)
+//     // })
+// }
 
 // Delete = delete one attraction
 // HOW DO I REWRITE THIS USING THE CALLBACK SYNTAX?
 async function deleteAttraction(req, res) {
-    await Attraction.findByIdAndDelete(req.params.id)
+    try {
+        let attraction = await Attraction.findById(req.params.id);
+        // Delete image from cloudinary
+        await cloudinary.uploader.destroy(attraction.cloudinary_id);
+        // Delete attraction from database
+        await attraction.remove();
+    } catch (err) {
+        console.log(err);
+    }
+    // await Attraction.findByIdAndDelete(req.params.id)
     res.redirect('/attractions')
 }
 

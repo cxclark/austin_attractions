@@ -1,5 +1,6 @@
 // const mongoose = require('./connection');
-
+const dotenv = require('dotenv')
+dotenv.config();
 require('./connection')
 const Attraction = require('../models/attractions');
 

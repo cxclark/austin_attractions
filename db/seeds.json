@@ -3,6 +3,8 @@
        "title": "Zilker Metropolitan Park",
        "address": "2100 Barton Springs Rd",
        "description": "Zilker Park is a 361-acre park nestled in the heart of downtown, right off Lady Bird Lake. The park was founded in 1917 and is home to picnic facilities, bike/canoe rentals, a disc golf course, a large playground for children, the Zilker Zephyr train and Barton Springs Pool, an urban oasis where swimmers plunge into 68-degree, spring-fed waters. The park is also the host to great events like the Austin City Limits Music Festival and the Austin Kite Festival.",
+       "image": "https://res.cloudinary.com/lilu986/image/upload/v1654982766/zilker_vs9jto.jpg",
+       "cloudinary_id": "zilker_vs9jto",
        "comments": {
           "content": "I love Zilker Park!",
           "rating": 5
@@ -11,11 +13,23 @@
     {
        "title": "Texas State Capitol",
        "address": "1100 Congress Ave",
-       "description": "The granite Texas statehouse stands as a testament to the history of the Lone Star State. The Texas Capitol is widely recognized as one of the nation's most distinguished state capitols. It was placed on the National Register of Historic Places in 1970 and designated a National Historic Landmark in 1986. Free, guided tours. Mon.-Fri. 8:30-4:30 p.m.; Sat. 9:30-3:30 p.m.; Sun. noon-3:30 p.m."
+       "description": "The granite Texas statehouse stands as a testament to the history of the Lone Star State. The Texas Capitol is widely recognized as one of the nation's most distinguished state capitols. It was placed on the National Register of Historic Places in 1970 and designated a National Historic Landmark in 1986. Free, guided tours. Mon.-Fri. 8:30-4:30 p.m.; Sat. 9:30-3:30 p.m.; Sun. noon-3:30 p.m.",
+       "image": "https://res.cloudinary.com/lilu986/image/upload/v1654982687/capitol_sql84l.jpg",
+       "cloudinary_id": "capitol_sql84l",
+       "comments": {
+          "content": "The Texas State Capitol is a must-see",
+          "rating": 5
+       }
     },
     {
        "title": "Elisabet Ney Museum",
        "address": "304 East 44th St",
-       "description": "The Elisabet Ney Museum is the historic 1892 Austin studio of European-born sculptor and activist Elisabet Ney (1833-1907). It features her own work—large scale classical style portraits of 19th-century European intellectuals, statesmen, and royalty, as well as Texas notables—and exhibitions of contemporary art, both on the grounds and inside the building. Part of the 2.5 acre site features a historic prairie recreation. Admission is free and events are held year-round."
+       "description": "The Elisabet Ney Museum is the historic 1892 Austin studio of European-born sculptor and activist Elisabet Ney (1833-1907). It features her own work—large scale classical style portraits of 19th-century European intellectuals, statesmen, and royalty, as well as Texas notables—and exhibitions of contemporary art, both on the grounds and inside the building. Part of the 2.5 acre site features a historic prairie recreation. Admission is free and events are held year-round.",
+       "image": "https://res.cloudinary.com/lilu986/image/upload/v1654982750/elisabet_museum_rq6iyi.jpg",
+       "cloudinary_id": "elisabet_museum_rq6iyi",
+       "comments": {
+          "content": "Beautiful oil paintings",
+          "rating": 5
+       }
     }
   ]

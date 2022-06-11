@@ -5,6 +5,10 @@ const AttractionSchema = new mongoose.Schema({
     title: String,
     address: String,
     description: String,
+
+    image: String,
+    cloudinary_id: String,
+    
     comments: [commentSchema]
     // img:
     // {

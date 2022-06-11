@@ -2,8 +2,8 @@
 const mongoose = require('mongoose')
 
 // Connect to attractions database
-mongoose.connect('mongodb://localhost:27017/attractions', {
-    useNewUrlParser: true
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
 })
 
 const db = mongoose.connection
