@@ -6,6 +6,33 @@
   <h1>Things To Do In Austin, TX</h1>
 
   <div class="container">
+    <div class="row row-cols-3">
+      <% attractions.forEach(function(attraction) { %>
+      <div class="col">
+
+        <div class="card">
+          <a href="/attractions/<%= attraction._id %>">
+            <img class="card-img-top" src= <%= attraction.image %> />
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= attraction.title %>
+            </h5>
+            <p class="card-text">
+              <%= attraction.description %>
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <% }); %>
+    </div>
+ 
+
+  </div>
+
+
+  <div class="container">
 
     <% attractions.forEach(function(attraction) { %>
 
@@ -21,12 +48,13 @@
         <%= attraction.description %>
       </div>
       <div>
-        <a href="/attractions/<%= attraction._id %>">DETAILS</a>
+        <a href="/attractions/<%= attraction._id %>">Details</a>
       </div>
       
     </div>
   <% }); %>
   </div>
+
 </section>
 
 
