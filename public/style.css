@@ -14,3 +14,7 @@
     object-fit: cover;
     border: 10px red;
 }
+
+.btn-width {
+    width: 80px;
+}
