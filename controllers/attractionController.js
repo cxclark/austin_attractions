@@ -1,6 +1,8 @@
 // Bring in attraction model
 const Attraction = require('../models/attractions')
 
+const path = require('path');
+
 // Cloudinary & Multer
 // https://www.youtube.com/watch?v=LWB1s6P0wgE&ab_channel=FarhanFarooq
 // But moved from Routes to Controller...
@@ -23,13 +25,12 @@ let index = (req, res) => {
 
 // Show = show details of one attraction
 let show = (req, res) => {
-    Attraction.findById({_id: req.params.id}, (err, attraction) => {
+    Attraction.findById(req.params.id, (err, attraction) => {
+        if(err){
+            res.status(400).json(err)
+            return
+        }
         res.render('attractions/show', {attraction})
-        // if(err){
-        //     res.status(400).json(err)
-        //     return
-        // }
-        // res.json(attraction)
     })
 }
 
@@ -40,8 +41,10 @@ let showNewForm = (req, res) => {
 
 
 // Trying to Cloudinary/Multer form of create
+// I DON'T THINK IT KNOWS WHAT REQ.FILE IS
 async function create(req, res) {
     try {
+        console.log(req.body)
         const result = await cloudinary.uploader.upload(req.file.path)
         
         let attraction = new Attraction({
