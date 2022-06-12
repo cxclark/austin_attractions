@@ -4,10 +4,40 @@
   
   <h1><%= attraction.title %></h1>
 
+  <div class="row">
+    <div class="col-auto">
+      <img src= <%= attraction.image %> />
+    </div>
+    <div class="col">
+      <div class="card-block px-2">
+
+        <h4 class="card-title"><%=attraction.address%></h4>
+
+        <p class="card-text"><%= attraction.description %></p>
+
+        <div class="d-flex justify-content-evenly">
+          <a class="btn btn-secondary" href="/attractions/<%=attraction._id%>/edit">
+          Edit
+          </a>
+
+          <form method="POST" action="/attractions/<%=attraction._id%>?_method=DELETE">
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <!-- <input type="submit" value="Delete Attraction"> -->
+          </form>
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
+
+
   <div>Address: <%= attraction.address %></div>
   <div>Description: <%= attraction.description %></div>
 
-  <a href="/attractions/<%=attraction._id%>/edit"><button>Edit Attraction</button></a>
+  <a href="/attractions/<%=attraction._id%>/edit">
+    <button>Edit Attraction</button>
+  </a>
 
   <form method="POST" action="/attractions/<%=attraction._id%>?_method=DELETE">
     <input type="submit" value="Delete Attraction">
@@ -16,7 +46,8 @@
 </section>
  
 <section class="container">
-    <h2>Comments</h2>
+  <h2>Comments</h2>
+
   <form id="add-comment-form" method="POST" action="/attractions/<%= attraction._id %>/comments">
     <label>Comment:</label>
     <textarea name="content"></textarea>
