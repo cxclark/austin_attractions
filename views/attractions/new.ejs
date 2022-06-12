@@ -16,35 +16,33 @@
           <label class="form-label">Title:</label>
           <input type="text" class="form-control" name="title" placeholder="e.g. Texas State Capitol">
           
-          <label>Address:</label>
-          <input type="text" name="address">
+          <label class="form-label">Address:</label>
+          <input type="text" class="form-control" name="address" placeholder="e.g. 1100 Congress Ave">
+
+          <div class="mb-3 mt-4">
+            <label class="form-label">Description</label>
+            <textarea 
+              type="text" 
+              class="form-control" 
+              name="description" 
+              rows="3">
+            </textarea>
+          </div>
           
-          <label>Description</label>
-          <input type="text" name="description">
-          
-          <input type="file" name="image">
-          
-          <input type="submit" value="Add Attraction">
+          <div class="mb-5">
+            <label class="form-label">Image:</label>
+            <input class="form-control text-muted" type="file" name="image">
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Add Attraction</button>
+          </div>
+
         </form>
 
       </div>
     </div>
 
-
-
   </div>
 
 </section>
-
-<h1>Add New Attraction</h1>
-
-<form id="new-form" action="/attractions" method="POST">
-    <label>Title:</label>
-    <input type="text" name="title">
-    <label>Address:</label>
-    <input type="text" name="address">
-    <label>Description</label>
-    <input type="text" name="description">
-    <input type="file" name="image">
-    <input type="submit" value="Add Attraction">
-  </form>

@@ -1,22 +1,22 @@
 <%- include('../partials/header') %>
 
- <h1>
-     <%= attraction.title %>
- </h1>
-
- <section id="show-page">
-    <div>Address: <%= attraction.address %></div>
-    <div>Description: <%= attraction.description %></div>
-  </section>
+<section class="container p-3 text-center">
   
+  <h1><%= attraction.title %></h1>
+
+  <div>Address: <%= attraction.address %></div>
+  <div>Description: <%= attraction.description %></div>
+
   <a href="/attractions/<%=attraction._id%>/edit"><button>Edit Attraction</button></a>
 
   <form method="POST" action="/attractions/<%=attraction._id%>?_method=DELETE">
     <input type="submit" value="Delete Attraction">
     </form>
 
-  <br><br>
-  <h2>Comments</h2>
+</section>
+ 
+<section class="container">
+    <h2>Comments</h2>
   <form id="add-comment-form" method="POST" action="/attractions/<%= attraction._id %>/comments">
     <label>Comment:</label>
     <textarea name="content"></textarea>
@@ -55,3 +55,7 @@
     <% } else { %>
       <h5>No Comments Yet</h5>
       <% } %>
+
+</section>
+  
+  
