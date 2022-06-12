@@ -1,9 +1,37 @@
 <%- include('../partials/header') %>
 
-<h1>Austin Attractions</h1>
 
-<table id="list">
+<section class="p-3 text-center">
 
+  <h1>Things To Do In Austin, TX</h1>
+
+  <div class="container">
+
+    <% attractions.forEach(function(attraction) { %>
+
+    <div class="d-sm-flex align-items-center">
+      <img class="img-fluid w-50" src= <%= attraction.image %> />
+      <div>
+        <%= attraction.title %>
+      </div>
+      <div>
+        <%= attraction.address %>
+      </div>
+      <div class="module">
+        <%= attraction.description %>
+      </div>
+      <div>
+        <a href="/attractions/<%= attraction._id %>">DETAILS</a>
+      </div>
+      
+    </div>
+  <% }); %>
+  </div>
+</section>
+
+
+
+    <table id="list">
     <thead>
       <tr>
         <th></th>
@@ -14,28 +42,29 @@
       </tr>
     </thead>
 
-    <div>
-      <tbody>
-      <% attractions.forEach(function(attraction) { %>
-        <tr>
-          <td>
-            <img src=<%= attraction.image %> />
-          </td>
-          <td>
-            <%= attraction.title %>
-          </td>
-          <td>
-            <%= attraction.address %>
-          </td>
-          <td>
-            <%= attraction.description %>
-          </td>
-          <td>
-            <a href="/attractions/<%= attraction._id %>">DETAILS</a>
-          </td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </div>
+      <div>
+        <tbody>
+        <% attractions.forEach(function(attraction) { %>
+          <tr>
+            <td>
+              <img src=<%= attraction.image %> />
+            </td>
+            <td>
+              <%= attraction.title %>
+            </td>
+            <td>
+              <%= attraction.address %>
+            </td>
+            <td>
+              <%= attraction.description %>
+            </td>
+            <td>
+              <a href="/attractions/<%= attraction._id %>">DETAILS</a>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </div>
 
-  </table>
+    </table>
+

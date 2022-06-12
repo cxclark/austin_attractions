@@ -41,8 +41,10 @@ app.use(methodOverride('_method'));
 // Routes start here
 app.use('/attractions', attractionRoutes)
 app.use('/attractions', commentRoutes)
-
 // Routes ened here
+
+// Tell express to match files to those in 'public' folder
+app.use(express.static('./public'));
 
 app.listen(PORT, ()=> {
     console.log(`Listening on PORT ${PORT}`)
