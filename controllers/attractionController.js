@@ -105,7 +105,17 @@ let showUpdateForm = (req, res) => {
 // HOW DO I REWRITE THIS USING THE CALLBACK SYNTAX?
 // CAN THE EDIT FUNCTION IGNORE EMPTY FIELDS?
 async function update(req, res) {
-    await Attraction.findByIdAndUpdate(req.params.id, req.body);
+    console.log('Thanks Billie');
+    console.log(req.body);
+    if (req.file) {
+        const result = await cloudinary.uploader.upload(req.file.path)
+        req.body["image"] = result.secure_url
+        req.body["cloudinary_id"] = result.public_id
+    } else {
+        delete req.body["image"]
+    }
+    let updatedAttraction = await Attraction.findByIdAndUpdate(req.params.id, req.body);
+    console.log(updatedAttraction);
     res.redirect(`/attractions/${req.params.id}`)
 }
 // let update = (req, res) => {

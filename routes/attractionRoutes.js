@@ -16,7 +16,7 @@ router.get('/:id', attractionCtrl.show);
 
 router.get('/:id/edit', attractionCtrl.showUpdateForm)
 
-router.put('/:id', attractionCtrl.update);
+router.patch('/:id', attractionCtrl.update);
 
 router.delete('/:id', attractionCtrl.deleteAttraction);
 
