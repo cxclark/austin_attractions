@@ -1,7 +1,6 @@
 <%- include('../partials/header') %>
 
 <section class="container p-3 text-center">
-  
   <h1><%= attraction.title %></h1>
 
   <div class="row my-5">
@@ -14,25 +13,19 @@
       <div class="card-block px-2">
 
         <p class="lead"><%=attraction.address%></p>
-
         <p class="card-text"><%= attraction.description %></p>
-
         <div class="d-flex justify-content-evenly">
           <a class="btn btn-secondary btn-width" href="/attractions/<%=attraction._id%>/edit">
           Edit
           </a>
-
           <form method="POST" action="/attractions/<%=attraction._id%>?_method=DELETE">
             <button type="submit" class="btn btn-danger btn-width">Delete</button>
           </form>
-
         </div>
         
-
       </div>
     </div>
   </div>
-
 </section>
  
 
@@ -41,15 +34,16 @@
   <h3>Reviews</h3>
 
 
-  <div>
+<!-- Add Reviews Form -->
+  <div class="mb-4">
     <form 
       id="add-comment-form" 
       method="POST" 
       action="/attractions/<%= attraction._id %>/comments">
 
       <div class="d-flex">
-          <div class="h2 mx-1"><i class="bi bi-person-circle"></i></div>
-          <div>
+          <div class="h2"><i class="bi bi-person-circle"></i></div>
+          <div class="mx-3">
             <input type="text" 
               class="form-control" 
               name="content" 
@@ -67,88 +61,51 @@
             </select>
           </div>
           
-          <div class="text-center">
+          <div class="text-center mx-3">
             <button type="submit" class="btn btn-primary">Add Review</button>
           </div>
         </div>
     </form>
   </div>
 
-  <div class="row">
-    <div class="col">
-      <p class="lead">
-        User
-      </p>
-    </div>
-    <div class="col-6">
-      <p class="lead">
-        Comment
-      </p>
-    </div>   
-    <div class="col">
-      <p class="lead">
-        Rating
-      </p>
-    </div> 
-  </div>
-
-  <% attraction.comments.forEach(function(comment) { %>
-  <div class="row">
-    <div class="col">
-      <div class="h2 mx-1"><i class="bi bi-person-circle"></i></div>
-    </div>
-    <div class="col-6">
-      <%= comment.content %>
-    </div>   
-    <div class="col">
-      <%= comment.rating %> / 5
-    </div> 
-  </div>
-  <% }); %>
-
-
-  <br><br>
-
-  <h2>Comments</h2>
-
-  <form id="add-comment-form" method="POST" action="/attractions/<%= attraction._id %>/comments">
-    <label>Comment:</label>
-    <textarea name="content"></textarea>
-    <label>Rating:</label>
-    <select name="rating">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-    <input type="submit" value="Add Comment">
-  </form>
-
+<!-- If there are reviews, show them -->
   <% if (attraction.comments.length) { %>
-    <table>
-      <thead>
-        <tr>
-          <th>Comment</th>
-          <th>Rating</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% attraction.comments.forEach(function(comment) { %>
-          <tr>
-            <td>
-              <%= comment.content %>
-            </td>
-            <td>
-              <%= comment.rating %>
-            </td>
-          </tr>
-          <% }); %>
-      </tbody>
-    </table>
-    <% } else { %>
-      <h5>No Comments Yet</h5>
-      <% } %>
+    <div class="row">
+      <div class="col">
+        <p class="lead">
+          User
+        </p>
+      </div>
+      <div class="col-6">
+        <p class="lead">
+          Comment
+        </p>
+      </div>   
+      <div class="col">
+        <p class="lead">
+          Rating
+        </p>
+      </div> 
+    </div>
+
+    <% attraction.comments.forEach(function(comment) { %>
+    <div class="row">
+      <div class="col">
+        <div class="h2"><i class="bi bi-person-circle"></i></div>
+      </div>
+      <div class="col-6">
+        <%= comment.content %>
+      </div>   
+      <div class="col">
+        <%= comment.rating %> / 5
+      </div> 
+    </div>
+    <% }); %>
+
+  <!-- If there are no reviews for this attraction -->
+  <% } else { %>
+      <h5>No Reviews Yet</h5>
+  <% } %>
 
 </section>
   
