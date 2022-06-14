@@ -2,14 +2,14 @@
 
 <section class="p-3 text-center">
 
-  <h1>Things To Do In Austin, TX</h1>
+  <h1 class="p-3 emphasis-font">Things To Do In Austin, TX</h1>
 
   <div class="container">
     <div class="row g-4">    
       <% attractions.forEach(function(attraction) { %>
       <div class="col-12 col-md-6 col-lg-4">
 
-        <div class="card">
+        <div class="card border-dark border-5">
           <a href="/attractions/<%= attraction._id %>">
             <img class="card-img-top resized" src= <%= attraction.image %> />
           </a>
@@ -17,7 +17,7 @@
             <h5 class="card-title"><%= attraction.title %></h5>
             <p class="text-muted"><%= attraction.address %></p>
             <p class="card-text module"><%= attraction.description %></p>
-            <p>
+            <p class="mb-0">
               <a href="/attractions/<%= attraction._id %>">Details</a>
             </p>
           </div>
@@ -30,3 +30,5 @@
   </div>
 
 </section>
+
+<%- include('../partials/footer') %>

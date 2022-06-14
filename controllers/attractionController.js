@@ -89,7 +89,6 @@ async function deleteAttraction(req, res) {
     } catch (err) {
         console.log(err);
     }
-    // await Attraction.findByIdAndDelete(req.params.id)
     res.redirect('/attractions')
 }
 
@@ -100,13 +99,11 @@ let showUpdateForm = (req, res) => {
     })
 }
 
-
 // Update = update an attraction in the database
 // HOW DO I REWRITE THIS USING THE CALLBACK SYNTAX?
-// CAN THE EDIT FUNCTION IGNORE EMPTY FIELDS?
 async function update(req, res) {
     console.log('Thanks Billie');
-    console.log(req.body);
+    console.log('Before', req.body);
     if (req.file) {
         const result = await cloudinary.uploader.upload(req.file.path)
         req.body["image"] = result.secure_url
@@ -114,22 +111,11 @@ async function update(req, res) {
     } else {
         delete req.body["image"]
     }
+    console.log('After', req.body)
     let updatedAttraction = await Attraction.findByIdAndUpdate(req.params.id, req.body);
-    console.log(updatedAttraction);
+    // console.log(updatedAttraction);
     res.redirect(`/attractions/${req.params.id}`)
 }
-// let update = (req, res) => {
-//     for (const key in req.body) {
-//         if (req.body[key] === '') delete req.body[key];
-//     }
-    // Attraction.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, attraction) => {
-    //     if(err){
-    //         res.status(400).json(err)
-    //     }
-    //     res.json(attraction)
-    // })
-// }
-
 
 module.exports  = {
     index,

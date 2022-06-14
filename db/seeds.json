@@ -22,10 +22,42 @@
        }
     },
     {
+       "title": "Cota Karting",
+       "address": "9201 Circuit of the Americas Blvd",
+       "description": "Come and race it with COTA Karting! COTA Karting is the country's premier karting destination for all skill levels. Kick fun into overdrive by challenging fellow competitors to a white-knuckle race next to the only purpose-built Formula 1 track in the United States! With 15 hair-raising turns, you'll feel a rush of adrenaline as you experience the thrill of racing at speeds up to 55 MPH. Whether you’re in the market for a unique corporate event or just a little friendly competition, COTA Karting is sure to become a year-round favorite. Prices start at $35 per ten minute race. This cost includes everything you’ll need to put the pedal to the metal on the Karting track. For more information visit http://www.circuitoftheamericas.com/karting. Tickets can be purchased online, by walk-up, or by contacting us at 512.655.6301.",
+       "image": "https://res.cloudinary.com/lilu986/image/upload/v1655170117/karting_qxdhtl.jpg",
+       "cloudinary_id": "karting_qxdhtl"
+    },    
+    {
+       "title": "Lake Austin Riverboats",
+       "address": "3825 Lake Austin Blvd",
+       "description": "As the longest running riverboat operation in Texas and an official boat of the Texas Navy, Lake Austin Riverboats provides a party venue as unique as Austin itself. Our full crew and captain will do everything to make your birthday, company party, meeting, group event, banquet, rehearsal dinner or wedding memorable. We offer catering, bar service, linen service, theme parties and live music. Whatever you need for your event, we bring it all together at Lake Austin Riverboats. And we're located just five minutes from downtown Austin.",
+       "image": "https://res.cloudinary.com/lilu986/image/upload/v1655170117/riverboats_ca7w5n.jpg",
+       "cloudinary_id": "riverboats_ca7w5n"
+    },   
+    {
        "title": "Elisabet Ney Museum",
        "address": "304 East 44th St",
        "description": "The Elisabet Ney Museum is the historic 1892 Austin studio of European-born sculptor and activist Elisabet Ney (1833-1907). It features her own work—large scale classical style portraits of 19th-century European intellectuals, statesmen, and royalty, as well as Texas notables—and exhibitions of contemporary art, both on the grounds and inside the building. Part of the 2.5 acre site features a historic prairie recreation. Admission is free and events are held year-round.",
        "image": "https://res.cloudinary.com/lilu986/image/upload/v1654982750/elisabet_museum_rq6iyi.jpg",
        "cloudinary_id": "elisabet_museum_rq6iyi"
+    },
+    {
+       "title": "Haunted ATX",
+       "address": "304 East 44th St501 North IH 35",
+       "description": "Haunted ATX offers the ONLY mobile haunted tour in Austin with public van tours and private hearse limo tours. Both tours will visit historic Austin locations that are reportedly haunted or have experienced paranormal activity, including the Tavern, Clay Pit, Littlefield House, and more. The van accommodates larger groups and the private tours offer custom pickup and other perks. Guests will get out of our vehicles frequently and go inside the establishments, but walking is minimal. Haunted hearse limo and van tours are fun, engaging, creepy, and scary!",
+       "image": "https://res.cloudinary.com/lilu986/image/upload/v1655170117/haunted_sx4vok.jpg",
+       "cloudinary_id": "haunted_sx4vok",
+       "comments": {
+          "content": "Best spooky thing to do in Austin",
+          "rating": 5
+       }
+    },
+    {
+       "title": "Lake Travis Waterloo Adventures",
+       "address": "13987 FM2769",
+       "description": "Waterloo Adventures is private Island getaway and revolutionary Floating Water Park. A 600 foot Obstacle Course surrounded by gorgeous Lake Travis and Austin Hill Country views! Our inclusive Resort style amenities include lakefront beach umbrellas, chaise loungers, hammocks, lockers, saddle floats, drink coolers, beach games and more! Food truck and Cabana Bar also available.",
+       "image": "https://res.cloudinary.com/lilu986/image/upload/v1655170117/waterloo_iwchrr.jpg",
+       "cloudinary_id": "waterloo_iwchrr"
     }
   ]
