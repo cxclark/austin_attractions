@@ -55,11 +55,10 @@ async function create(req, res) {
             cloudinary_id: result.public_id
         })
         await attraction.save();
-        res.json(attraction);
-
     } catch (err) {
         console.log(err);
     }
+    res.redirect('/attractions')
 }
 // // Create = create a new attraction in the database
 // let create = (req, res) => {

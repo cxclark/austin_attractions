@@ -2,8 +2,6 @@ const express = require('express')
 const router = express.Router()
 const passport = require('passport');
 
-// Require multer for image uploads
-const upload = require('../utils/multer');
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
