@@ -2,8 +2,7 @@ const mongoose = require('mongoose')
 
 const commentSchema = new mongoose.Schema({
     content: {type: String, required: true},
-    rating: {type: Number, min: 1, max: 5, default: 5}
-    // attractionID: 
+    rating: {type: Number, min: 1, max: 5, default: 5},
     // userID:
     
     // Comment schema is embedded in Attraction schema
