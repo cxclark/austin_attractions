@@ -1,12 +1,12 @@
 // DONE 6-11: Finalize backend schemas
-// 6-11: Create EJS and render pages for website
-// 6-11: Create Partial EJS's for header and footers
-// 6-11: Set up Multr and Cloudinary for photos
-// 6-11: Get photos to display on website
-// 6-11: Find Bootstrap nav bar template
-// 6-11: Find Bootstrap card tiles template
-// 6-12: Set up O-Auth and login stuff
-// 6-12: Sign up for Atlas and host database
+// DONE 6-11: Create EJS and render pages for website
+// DONE 6-11: Create Partial EJS's for header and footers
+// DONE 6-11: Set up Multr and Cloudinary for photos
+// DONE 6-11: Get photos to display on website
+// DONE 6-11: Find Bootstrap nav bar template
+// DONE 6-11: Find Bootstrap card tiles template
+// 6-14: Set up O-Auth and login stuff
+// 6-14: Sign up for Atlas and host database
 // 6-14: Sign up for Heroku, and install: https://git.generalassemb.ly/Flex-322/Heroku_Atlas_Deployment_cheatsheet
 // Uninstall dotenv?
 
@@ -18,14 +18,16 @@ const attractionRoutes = require('./routes/attractionRoutes')
 const commentRoutes = require('./routes/commentRoutes')
 const methodOverride = require('method-override')
 const logger = require('morgan')
+const session = require('express-session')
+const passport = require('passport')
 
-// Cloudinary and Multer
-// https://www.youtube.com/watch?v=LWB1s6P0wgE&ab_channel=FarhanFarooq
+// Load environment variables in .env file to make them available
 const dotenv = require('dotenv')
 dotenv.config();
 
-// Require DB connection
+// Require DB connection and run passport
 require('./db/connection')
+require('./db/passport')
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -36,6 +38,13 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
+app.use(session({
+    secret: 'Using OAuth Woot!',
+    resave: false,
+    saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 // Middlewares end here
 
 // Routes start here
