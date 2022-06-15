@@ -47,6 +47,28 @@ app.use(passport.initialize());
 app.use(passport.session());
 // Middlewares end here
 
+// Google OAuth login route
+app.get('/auth/google', passport.authenticate(
+  'google', 
+  { scope: ['profile', 'email'] }
+));
+
+// Google OAuth callback route
+// Callback route that Google will call after the user confirms
+app.get('/oauth2callback', passport.authenticate(
+  'google',
+  {
+    successRedirect : '/attractions',
+    failureRedirect : '/attractions'
+  }
+));
+
+// Google OAuth logout route
+app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/attractions');
+});
+
 // Routes start here
 app.use('/attractions', attractionRoutes)
 app.use('/attractions', commentRoutes)
