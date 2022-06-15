@@ -10,24 +10,25 @@
 // 6-14: Sign up for Heroku, and install: https://git.generalassemb.ly/Flex-322/Heroku_Atlas_Deployment_cheatsheet
 // Uninstall dotenv?
 
-const express = require('express')
+const express = require('express');
 const path = require('path');
-const PORT = 7000
-const app = express()
-const attractionRoutes = require('./routes/attractionRoutes')
-const commentRoutes = require('./routes/commentRoutes')
-const methodOverride = require('method-override')
-const logger = require('morgan')
-const session = require('express-session')
-const passport = require('passport')
+const PORT = 7000;
+const app = express();
+const attractionRoutes = require('./routes/attractionRoutes');
+const commentRoutes = require('./routes/commentRoutes');
+const authRoutes = require('./routes/authRoutes');
+const methodOverride = require('method-override');
+const logger = require('morgan');
+const session = require('express-session');
+const passport = require('passport');
 
 // Load environment variables in .env file to make them available
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
 dotenv.config();
 
 // Require DB connection and run passport
-require('./db/connection')
-require('./db/passport')
+require('./db/connection');
+require('./db/passport');
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -47,31 +48,32 @@ app.use(passport.initialize());
 app.use(passport.session());
 // Middlewares end here
 
-// Google OAuth login route
-app.get('/auth/google', passport.authenticate(
-  'google', 
-  { scope: ['profile', 'email'] }
-));
+// // Google OAuth login route
+// app.get('/auth/google', passport.authenticate(
+//   'google', 
+//   { scope: ['profile', 'email'] }
+// ));
 
-// Google OAuth callback route
-// Callback route that Google will call after the user confirms
-app.get('/oauth2callback', passport.authenticate(
-  'google',
-  {
-    successRedirect : '/attractions',
-    failureRedirect : '/attractions'
-  }
-));
+// // Google OAuth callback route
+// // Callback route that Google will call after the user confirms
+// app.get('/oauth2callback', passport.authenticate(
+//   'google',
+//   {
+//     successRedirect : '/attractions',
+//     failureRedirect : '/attractions'
+//   }
+// ));
 
-// Google OAuth logout route
-app.get('/logout', function(req, res){
-    req.logout();
-    res.redirect('/attractions');
-});
+// // Google OAuth logout route
+// app.get('/logout', function(req, res){
+//     req.logout();
+//     res.redirect('/attractions');
+// });
 
 // Routes start here
 app.use('/attractions', attractionRoutes)
 app.use('/attractions', commentRoutes)
+app.use('/', authRoutes)
 // Routes ened here
 
 // Tell express to match files to those in 'public' folder
