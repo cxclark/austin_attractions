@@ -18,6 +18,7 @@
 const express = require('express');
 const path = require('path');
 const PORT = 7000;
+// const PORT = normalizePort(process.env.PORT || '7000');
 const app = express();
 const attractionRoutes = require('./routes/attractionRoutes');
 const commentRoutes = require('./routes/commentRoutes');
