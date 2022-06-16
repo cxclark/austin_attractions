@@ -8,7 +8,7 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.GOOGLE_CALLBACK
     },
     function(accessToken, refreshToken, profile, cb) {
-        User.findOne({ 'googleID': profile.id }), function(err, user) {
+        User.findOne({ 'googleID': profile.id }, function(err, user) {
             if (err) return cb(err);
             if (user) {
                 return cb(null, user);
@@ -22,9 +22,9 @@ passport.use(new GoogleStrategy({
                 newUser.save(function(err){
                     if (err) return cb(err)
                     return cb(null, newStudent)
-                })
+                });
             }
-        }
+        });
     }
 ));
 

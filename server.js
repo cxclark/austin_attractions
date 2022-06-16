@@ -7,10 +7,13 @@
 // DONE 6-11: Find Bootstrap card tiles template
 // DONE: 6-14: Set up O-Auth and login stuff
 // DONE 6-15: Sign up for Atlas and host database
-// 6-15: Update Add Attraction Route
+// DONE: 6-15: Update Add Attraction Route
 // 6-15: Fix issues with O-Auth
 // 6-15: Finalize User Model
 // 6-16: Sign up for Heroku, and install: https://git.generalassemb.ly/Flex-322/Heroku_Atlas_Deployment_cheatsheet
+// 6-16: Update passport-local https://www.passportjs.org/packages/passport-local/
+// 6-16: Use bcrypt for passwords: https://www.npmjs.com/package/bcrypt
+
 
 const express = require('express');
 const path = require('path');
