@@ -10,7 +10,8 @@
 
 .resized-sm {
     height: 300px;
-    width: 406px;
+    /* width: 406px; */
+    width: 25rem;
     object-fit: cover;
 }
 
