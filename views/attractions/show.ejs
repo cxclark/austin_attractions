@@ -6,14 +6,15 @@
   <div class="row my-5">
 
     <div class="col-auto">
-      <img class="img-fluid" src= <%= attraction.image %> />
+      <img class="img-fluid border border-5 resized-md" src= <%= attraction.image %> />
     </div>
 
     <div class="col d-flex align-items-center">
       <div class="card-block px-2">
 
-        <p class="lead"><%=attraction.address%></p>
+        <p class="p-3 lead"><%=attraction.address%></p>
         <p class="card-text"><%= attraction.description %></p>
+        <br><br>
         <div class="d-flex justify-content-evenly">
           <a class="btn btn-secondary btn-width" href="/attractions/<%=attraction._id%>/edit">
           Edit
@@ -29,10 +30,8 @@
 </section>
  
 
-
 <section class="container">
   <h3>Reviews</h3>
-
 
 <!-- Add Reviews Form -->
   <div class="mb-4">

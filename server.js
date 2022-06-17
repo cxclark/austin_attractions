@@ -13,12 +13,16 @@
 // 6-16: Sign up for Heroku, and install: https://git.generalassemb.ly/Flex-322/Heroku_Atlas_Deployment_cheatsheet
 // 6-16: Update passport-local https://www.passportjs.org/packages/passport-local/
 // 6-16: Use bcrypt for passwords: https://www.npmjs.com/package/bcrypt
+// 6/17: Delete Procfile?
 
+// Load environment variables in .env file to make them available
+const dotenv = require('dotenv');
+dotenv.config();
 
 const express = require('express');
 const path = require('path');
-const PORT = 7000;
-// const PORT = normalizePort(process.env.PORT || '7000');
+// const PORT = 7000;
+const PORT = process.env.PORT || '7000';
 const app = express();
 const attractionRoutes = require('./routes/attractionRoutes');
 const commentRoutes = require('./routes/commentRoutes');
@@ -28,9 +32,7 @@ const logger = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
 
-// Load environment variables in .env file to make them available
-const dotenv = require('dotenv');
-dotenv.config();
+
 
 // Require DB connection and run passport
 require('./db/connection');
@@ -54,28 +56,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 // Middlewares end here
 
-// // Google OAuth login route
-// app.get('/auth/google', passport.authenticate(
-//   'google', 
-//   { scope: ['profile', 'email'] }
-// ));
-
-// // Google OAuth callback route
-// // Callback route that Google will call after the user confirms
-// app.get('/oauth2callback', passport.authenticate(
-//   'google',
-//   {
-//     successRedirect : '/attractions',
-//     failureRedirect : '/attractions'
-//   }
-// ));
-
-// // Google OAuth logout route
-// app.get('/logout', function(req, res){
-//     req.logout();
-//     res.redirect('/attractions');
-// });
-
 // Routes start here
 
 // TEST CODE WHEN TROUBLESHOOTING OAUTH
@@ -84,6 +64,10 @@ app.use(function (req, res, next) {
     console.log(req.user)
     next();
     }); 
+
+app.get('/', (req, res) => {
+    res.send('Home')
+});
 app.use('/', authRoutes)
 
 app.use('/attractions', attractionRoutes)

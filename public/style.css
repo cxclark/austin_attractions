@@ -8,11 +8,16 @@
     white-space: normal;
 }
 
-.resized {
+.resized-sm {
     height: 300px;
-    width: 400px;
+    width: 406px;
     object-fit: cover;
-    border: 10px red;
+}
+
+.resized-md {
+    height: 450px;
+    width: 630px;
+    object-fit: cover;
 }
 
 .btn-width {
