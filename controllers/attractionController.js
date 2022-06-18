@@ -18,7 +18,7 @@ let index = (req, res, next) => {
             attractions,
             user: req.user,
             name: req.query.name,
-            sortKey
+            // sortKey
         });
         // if(err){
         //     res.status(400).json(err)

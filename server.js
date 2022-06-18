@@ -22,7 +22,7 @@ dotenv.config();
 const express = require('express');
 const path = require('path');
 // const PORT = 7000;
-const PORT = process.env.PORT || '7000';
+const PORT = process.env.PORT || 8080;
 const app = express();
 const attractionRoutes = require('./routes/attractionRoutes');
 const commentRoutes = require('./routes/commentRoutes');
@@ -47,7 +47,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(session({
-    secret: 'Using OAuth Woot!',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true
 }));
@@ -76,6 +76,6 @@ app.use('/attractions', commentRoutes)
 // Tell express to match files to those in 'public' folder
 app.use(express.static('./public'));
 
-app.listen(PORT, ()=> {
+app.listen(PORT, '0.0.0.0', ()=> {
     console.log(`Listening on PORT ${PORT}`)
 })
