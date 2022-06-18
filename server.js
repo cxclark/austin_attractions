@@ -33,7 +33,6 @@ const session = require('express-session');
 const passport = require('passport');
 
 
-
 // Require DB connection and run passport
 require('./db/connection');
 require('./db/passport');

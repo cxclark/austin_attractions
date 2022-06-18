@@ -11,16 +11,21 @@ const upload = require('../utils/multer');
 
 
 // Index = get all attractions
-let index = (req, res) => {
+let index = (req, res, next) => {
     // Respond with the attractions
     Attraction.find({}, (err, attractions) => {
-        res.render('attractions/index', {attractions})
+        res.render('attractions/index', {
+            attractions,
+            user: req.user,
+            name: req.query.name,
+            sortKey
+        });
         // if(err){
         //     res.status(400).json(err)
         //     return
         // }
         // res.json(attractions)
-    })
+    });
 }
 
 // Show = show details of one attraction
