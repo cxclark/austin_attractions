@@ -8,12 +8,12 @@
 // DONE: 6-14: Set up O-Auth and login stuff
 // DONE 6-15: Sign up for Atlas and host database
 // DONE: 6-15: Update Add Attraction Route
-// 6-15: Fix issues with O-Auth
-// 6-15: Finalize User Model
+// DONE: 6-15: Fix issues with O-Auth
 // 6-16: Sign up for Heroku, and install: https://git.generalassemb.ly/Flex-322/Heroku_Atlas_Deployment_cheatsheet
 // 6-16: Update passport-local https://www.passportjs.org/packages/passport-local/
 // 6-16: Use bcrypt for passwords: https://www.npmjs.com/package/bcrypt
 // 6/17: Delete Procfile?
+// 6-18: Finalize User Model & Pages
 
 // Load environment variables in .env file to make them available
 const dotenv = require('dotenv');
@@ -21,7 +21,6 @@ dotenv.config();
 
 const express = require('express');
 const path = require('path');
-// const PORT = 7000;
 const PORT = process.env.PORT || 8080;
 const app = express();
 const attractionRoutes = require('./routes/attractionRoutes');
@@ -57,18 +56,18 @@ app.use(passport.session());
 
 // Routes start here
 
-// TEST CODE WHEN TROUBLESHOOTING OAUTH
-app.use(function (req, res, next) {
-    res.locals.user = req.user;
-    console.log(req.user)
-    next();
-    }); 
-
+// // TEST CODE WHEN TROUBLESHOOTING OAUTH
+// app.use(function (req, res, next) {
+//     res.locals.user = req.user;
+//     console.log(req.user)
+//     next();
+//     }); 
+    
+// Send 'Home' on home path 
 app.get('/', (req, res) => {
     res.send('Home')
 });
 app.use('/', authRoutes)
-
 app.use('/attractions', attractionRoutes)
 app.use('/attractions', commentRoutes)
 // Routes ened here
@@ -76,6 +75,6 @@ app.use('/attractions', commentRoutes)
 // Tell express to match files to those in 'public' folder
 app.use(express.static('./public'));
 
-app.listen(PORT, '0.0.0.0', ()=> {
+app.listen(PORT, ()=> {
     console.log(`Listening on PORT ${PORT}`)
 })
