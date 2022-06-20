@@ -1,9 +1,14 @@
 const mongoose = require('mongoose')
 
+// In future I would keep 
+
 const commentSchema = new mongoose.Schema({
     content: {type: String, required: true},
     rating: {type: Number, min: 1, max: 5, default: 5},
-    // userID:
+    userID: String
+    
+    // Is this how you reference?
+    // userID: {type: Schema.Types.ObjectId, ref: 'User'}
     
     // Comment schema is embedded in Attraction schema
     // Moving forward, would use have key for comment ID in commentSchema, the RDS way

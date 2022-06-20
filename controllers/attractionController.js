@@ -30,6 +30,10 @@ let index = (req, res, next) => {
 // Show = show details of one attraction
 let show = (req, res, next) => {
     Attraction.findById(req.params.id, (err, attraction) => {
+
+        // How do I pull out the user by 
+        attraction.comments.populate('userID')
+        
         if(err){
             res.status(400).json(err)
             return

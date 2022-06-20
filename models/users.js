@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const UserSchema = new mongoose.Schema({
     name: String,
     email: String,
-    googleID: String,
+    googleID: String
 
     // Best option: When you save the comment, you apply the attraction ID to the comment
     // In-between option: keep embedding in Attraction, update comment schema to have userID****
