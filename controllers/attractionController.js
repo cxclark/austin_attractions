@@ -19,9 +19,14 @@ let index = (req, res, next) => {
 
     // Respond with the attractions
     Attraction.find({}, (err, attractions) => {
-        // let user = req.user;
-        // let name = req.query.name;
-        res.render('attractions/index', {attractions});
+        console.log(req.user)
+        // console.log(req.user.name)
+        // console.log(req.user.email)
+        // console.log(req.user.googleID)
+        res.render('attractions/index', {
+            attractions,
+            user: req.user
+        });
     });
 }
 

@@ -1,4 +1,3 @@
-// DONE: 6-16: Sign up for Heroku, and install: https://git.generalassemb.ly/Flex-322/Heroku_Atlas_Deployment_cheatsheet
 // 6-16: Update passport-local https://www.passportjs.org/packages/passport-local/
 // 6-16: Use bcrypt for passwords: https://www.npmjs.com/package/bcrypt
 // 6/17: Delete Procfile?
@@ -51,14 +50,15 @@ app.use(passport.session());
 
 // Routes start here
 
-// // TEST CODE WHEN TROUBLESHOOTING OAUTH
+// TEST CODE WHEN TROUBLESHOOTING OAUTH
+// DO I NEED THIS CODE TO ASSIGN THE CORRECT VALUE TO REQ.USER?
 // app.use(function (req, res, next) {
 //     res.locals.user = req.user;
 //     console.log(req.user)
 //     next();
 //     }); 
     
-// Send 'Home' on home path 
+// Redirect home path to index page
 app.get('/', (req, res) => {
     res.redirect('/attractions')
 });
