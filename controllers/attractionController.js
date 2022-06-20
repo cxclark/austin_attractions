@@ -28,12 +28,11 @@ let index = (req, res, next) => {
 }
 
 // Show = show details of one attraction
-let show = async (req, res, next) => {
-    Attraction.findById(req.params.id, (err, attraction) => {
-
-        // Populates the data associated with user's database ID 
-        await attraction.comments.populate('userID')
-        
+let show = (req, res, next) => {
+    
+    // Populates the data associated with user's database ID 
+    Attraction.findById(req.params.id).populate({ path:'comments', populate:{path: 'userID', model:'User'} }).exec( (err, attraction) => {
+        console.log(attraction)
         if(err){
             res.status(400).json(err)
             return

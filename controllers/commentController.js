@@ -6,7 +6,7 @@ let create = (req, res) => {
         req.params.id,
         function (err, attraction) {
             console.log(req.body)
-            attraction.comments.push(req.body);
+            attraction.comments.push({...req.body, userID: req.user._id});
             attraction.save(function(err) {
                 if (err) {
                     console.log(err);
