@@ -1,15 +1,6 @@
-// DONE 6-11: Finalize backend schemas
-// DONE 6-11: Create EJS and render pages for website
-// DONE 6-11: Create Partial EJS's for header and footers
-// DONE 6-11: Set up Multr and Cloudinary for photos
-// DONE 6-11: Get photos to display on website
-// DONE 6-11: Find Bootstrap nav bar template
-// DONE 6-11: Find Bootstrap card tiles template
-// DONE: 6-14: Set up O-Auth and login stuff
-// DONE 6-15: Sign up for Atlas and host database
 // DONE: 6-15: Update Add Attraction Route
 // DONE: 6-15: Fix issues with O-Auth
-// 6-16: Sign up for Heroku, and install: https://git.generalassemb.ly/Flex-322/Heroku_Atlas_Deployment_cheatsheet
+// DONE: 6-16: Sign up for Heroku, and install: https://git.generalassemb.ly/Flex-322/Heroku_Atlas_Deployment_cheatsheet
 // 6-16: Update passport-local https://www.passportjs.org/packages/passport-local/
 // 6-16: Use bcrypt for passwords: https://www.npmjs.com/package/bcrypt
 // 6/17: Delete Procfile?
@@ -46,7 +37,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: 'secretIDhere',
     resave: false,
     saveUninitialized: true
 }));
