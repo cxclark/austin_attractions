@@ -4,6 +4,10 @@
 // 6/17: Delete Procfile?
 // 6-18: Finalize User Model & Pages
 
+// 6-20: Clean up Comments section
+// 6-20: Clean up Code and Prep Submission
+// 6-20: Edit User/Login/Logout if time permits
+
 // Load environment variables in .env file to make them available
 const dotenv = require('dotenv');
 dotenv.config();
