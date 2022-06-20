@@ -31,8 +31,8 @@ let index = (req, res, next) => {
 let show = (req, res, next) => {
     Attraction.findById(req.params.id, (err, attraction) => {
 
-        // How do I pull out the user by 
-        attraction.comments.populate('userID')
+        // Populates the data associated with user's database ID 
+        await attraction.comments.populate('userID')
         
         if(err){
             res.status(400).json(err)
