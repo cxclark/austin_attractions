@@ -28,7 +28,7 @@ let index = (req, res, next) => {
 }
 
 // Show = show details of one attraction
-let show = (req, res, next) => {
+let show = async (req, res, next) => {
     Attraction.findById(req.params.id, (err, attraction) => {
 
         // Populates the data associated with user's database ID 
