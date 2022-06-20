@@ -20,9 +20,6 @@ let index = (req, res, next) => {
     // Respond with the attractions
     Attraction.find({}, (err, attractions) => {
         console.log(req.user)
-        // console.log(req.user.name)
-        // console.log(req.user.email)
-        // console.log(req.user.googleID)
         res.render('attractions/index', {
             attractions,
             user: req.user
@@ -31,21 +28,20 @@ let index = (req, res, next) => {
 }
 
 // Show = show details of one attraction
-let show = (req, res) => {
+let show = (req, res, next) => {
     Attraction.findById(req.params.id, (err, attraction) => {
         if(err){
             res.status(400).json(err)
             return
         }
-        res.render('attractions/show', {attraction})
+        res.render('attractions/show', {attraction, user: req.user})
     })
 }
 
 // New = render form to create new attraction
-let showNewForm = (req, res) => {
-    res.render('attractions/new')
+let showNewForm = (req, res, next) => {
+    res.render('attractions/new', {user: req.user})
 }
-
 
 // Create = create a new attraction in the database
 async function create(req, res) {
@@ -82,9 +78,9 @@ async function deleteAttraction(req, res) {
 }
 
 // Show update form to update an attraction
-let showUpdateForm = (req, res) => {
+let showUpdateForm = (req, res, next) => {
     Attraction.findById(req.params.id, (err, attraction) => {
-        res.render('attractions/edit', {attraction})
+        res.render('attractions/edit', {attraction, user: req.user})
     })
 }
 
