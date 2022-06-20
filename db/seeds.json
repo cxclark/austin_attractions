@@ -4,22 +4,14 @@
        "address": "2100 Barton Springs Rd",
        "description": "Zilker Park is a 361-acre park nestled in the heart of downtown, right off Lady Bird Lake. The park was founded in 1917 and is home to picnic facilities, bike/canoe rentals, a disc golf course, a large playground for children, the Zilker Zephyr train and Barton Springs Pool, an urban oasis where swimmers plunge into 68-degree, spring-fed waters. The park is also the host to great events like the Austin City Limits Music Festival and the Austin Kite Festival.",
        "image": "https://res.cloudinary.com/lilu986/image/upload/v1655737032/zilker_aokr9k.jpg",
-       "cloudinary_id": "zilker_aokr9k",
-       "comments": {
-          "content": "I love Zilker Park!",
-          "rating": 5
-       }
+       "cloudinary_id": "zilker_aokr9k"
     },
     {
        "title": "Texas State Capitol",
        "address": "1100 Congress Ave",
        "description": "The granite Texas statehouse stands as a testament to the history of the Lone Star State. The Texas Capitol is widely recognized as one of the nation's most distinguished state capitols. It was placed on the National Register of Historic Places in 1970 and designated a National Historic Landmark in 1986. Free, guided tours. Mon.-Fri. 8:30-4:30 p.m.; Sat. 9:30-3:30 p.m.; Sun. noon-3:30 p.m.",
        "image": "https://res.cloudinary.com/lilu986/image/upload/v1654982687/capitol_sql84l.jpg",
-       "cloudinary_id": "capitol_sql84l",
-       "comments": {
-          "content": "The Texas State Capitol is a must-see",
-          "rating": 5
-       }
+       "cloudinary_id": "capitol_sql84l"
     },
     {
        "title": "Cota Karting",
@@ -47,11 +39,7 @@
        "address": "304 East 44th St501 North IH 35",
        "description": "Haunted ATX offers the ONLY mobile haunted tour in Austin with public van tours and private hearse limo tours. Both tours will visit historic Austin locations that are reportedly haunted or have experienced paranormal activity, including the Tavern, Clay Pit, Littlefield House, and more. The van accommodates larger groups and the private tours offer custom pickup and other perks. Guests will get out of our vehicles frequently and go inside the establishments, but walking is minimal. Haunted hearse limo and van tours are fun, engaging, creepy, and scary!",
        "image": "https://res.cloudinary.com/lilu986/image/upload/v1655170117/haunted_sx4vok.jpg",
-       "cloudinary_id": "haunted_sx4vok",
-       "comments": {
-          "content": "Best spooky thing to do in Austin",
-          "rating": 5
-       }
+       "cloudinary_id": "haunted_sx4vok"
     },
     {
        "title": "Lake Travis Waterloo Adventures",
