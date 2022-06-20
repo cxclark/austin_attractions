@@ -60,7 +60,7 @@ app.use(passport.session());
     
 // Send 'Home' on home path 
 app.get('/', (req, res) => {
-    res.send('Home')
+    res.redirect('/attractions')
 });
 app.use('/', authRoutes)
 app.use('/attractions', attractionRoutes)
