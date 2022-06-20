@@ -1,5 +1,3 @@
-// DONE: 6-15: Update Add Attraction Route
-// DONE: 6-15: Fix issues with O-Auth
 // DONE: 6-16: Sign up for Heroku, and install: https://git.generalassemb.ly/Flex-322/Heroku_Atlas_Deployment_cheatsheet
 // 6-16: Update passport-local https://www.passportjs.org/packages/passport-local/
 // 6-16: Use bcrypt for passwords: https://www.npmjs.com/package/bcrypt
@@ -22,7 +20,6 @@ const logger = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
 
-
 // Require DB connection and run passport
 require('./db/connection');
 require('./db/passport');
@@ -36,6 +33,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
+
+// Had trouble using process.env.SESSION_SECRET here.
+// It would create an Internal Server Error for Heroku
 app.use(session({
     secret: 'secretIDhere',
     resave: false,
