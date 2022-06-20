@@ -21,7 +21,10 @@ router.get('/oauth2callback', passport.authenticate(
 
 // Google OAuth logout route
 router.get('/logout', function(req, res){
-    req.logout();
+    req.logout(err => {
+      if (err) return err
+      next();
+    });
     res.redirect('/attractions');
 });
 
