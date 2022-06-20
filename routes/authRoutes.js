@@ -22,10 +22,9 @@ router.get('/oauth2callback', passport.authenticate(
 // Google OAuth logout route
 router.get('/logout', function(req, res){
     req.logout(err => {
-      if (err) return err
-      next();
+      if (err) return next(err)
+      res.redirect('/attractions')
     });
-    res.redirect('/attractions');
 });
 
 module.exports = router
