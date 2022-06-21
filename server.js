@@ -1,7 +1,3 @@
-// DONE 6-20: Clean up Comments section
-// DONE 6-20: Clean up Code and Prep Submission
-// DONE 6-20: Edit User/Login/Logout if time permits
-
 // Load environment variables in .env file to make them available
 const dotenv = require('dotenv');
 dotenv.config();
