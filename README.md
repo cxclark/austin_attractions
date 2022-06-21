@@ -32,6 +32,7 @@ The app can be accessed here: [austin-attractions.herokuapp.com](https://austin-
 - User can create new Austin attractions and add to the list of Austin attractions.
 - User can edit and delete existing Austin attractions.
 - User can upload and view photos associated with attractions.
+- User can login using Google.
 
 ### Original Wireframes
 ![1_index](./public/assets/wireframes/1_index.JPG)
