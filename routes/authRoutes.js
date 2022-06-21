@@ -1,7 +1,9 @@
-const express = require('express')
-const router = express.Router()
+// Require express
+const express = require('express');
+// Create a new router object
+const router = express.Router();
+// Require passport
 const passport = require('passport');
-
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
@@ -22,8 +24,8 @@ router.get('/oauth2callback', passport.authenticate(
 // Google OAuth logout route
 router.get('/logout', function(req, res){
     req.logout(err => {
-      if (err) return next(err)
-      res.redirect('/attractions')
+      if (err) return next(err);
+      res.redirect('/attractions');
     });
 });
 
