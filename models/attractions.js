@@ -1,4 +1,6 @@
+// Require mongoose
 const mongoose = require('mongoose')
+// Require Comments model
 const {commentSchema} = require('./comments')
 
 const AttractionSchema = new mongoose.Schema({
