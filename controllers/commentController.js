@@ -1,5 +1,7 @@
+// Require Attraction model
 const Attraction = require('../models/attractions')
 
+// Create a new comment associated with the attraction in the database
 let create = (req, res) => {
     console.log(req.params)
     Attraction.findById(
