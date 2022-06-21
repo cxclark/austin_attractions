@@ -47,5 +47,19 @@
        "description": "Waterloo Adventures is private Island getaway and revolutionary Floating Water Park. A 600 foot Obstacle Course surrounded by gorgeous Lake Travis and Austin Hill Country views! Our inclusive Resort style amenities include lakefront beach umbrellas, chaise loungers, hammocks, lockers, saddle floats, drink coolers, beach games and more! Food truck and Cabana Bar also available.",
        "image": "https://res.cloudinary.com/lilu986/image/upload/v1655170117/waterloo_iwchrr.jpg",
        "cloudinary_id": "waterloo_iwchrr"
+    },
+    {
+       "title": "Blanton Museum of Art",
+       "address": "200 E. Martin Luther King Blvd",
+       "description": "Founded in 1963, the Blanton Museum of Art is one of the foremost university art museums in the country and holds the largest public collection in Central Texas. Recognized for its modern and contemporary American and Latin American art, Italian Renaissance and Baroque paintings, encyclopedic collection of prints and drawings, and Ellsworth Kelly’s Austin, the Blanton offers thought provoking, visually arresting, and personally moving encounters with art.",
+       "image": "https://res.cloudinary.com/lilu986/image/upload/v1655769986/blanton_pn4s8r.jpg",
+       "cloudinary_id": "blanton_pn4s8r"
+      },
+     {
+       "title": "Austin Bouldering Project",
+       "address": "979 Springdale Road, Suite 150",
+       "description": "At 50,000 square feet with 250 rotating configurations, Austin Bouldering Project is the world's largest bouldering gym. The facility also houses a yoga studio and over 5,000 square feet of open fitness space. Visitors can buy memberships or day passes, rent equipment, take classes and even rent the space for private events.",
+       "image": "https://res.cloudinary.com/lilu986/image/upload/v1655769986/bouldering_t6omww.jpg",
+       "cloudinary_id": "bouldering_t6omww"
     }
   ]

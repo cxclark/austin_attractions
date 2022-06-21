@@ -8,18 +8,8 @@ const cloudinary = require('../utils/cloudinary');
 
 // Index = get all attractions
 let index = (req, res, next) => {
-
-    // app.use(function (req, res, next) {
-    //     res.locals.user = req.user;
-    //     console.log(req.user)
-    //     next();
-    //     }); 
-    // DELETE THIS LATER****
-    // console.log('req.query', req.locals.user)
-
     // Respond with the attractions
     Attraction.find({}, (err, attractions) => {
-        console.log(req.user)
         res.render('attractions/index', {
             attractions,
             user: req.user
@@ -29,16 +19,17 @@ let index = (req, res, next) => {
 
 // Show = show details of one attraction
 let show = (req, res, next) => {
-    
     // Populates the data associated with user's database ID 
-    Attraction.findById(req.params.id).populate({ path:'comments', populate:{path: 'userID', model:'User'} }).exec( (err, attraction) => {
-        console.log(attraction)
-        if(err){
-            res.status(400).json(err)
-            return
-        }
-        res.render('attractions/show', {attraction, user: req.user})
-    })
+    Attraction.findById(req.params.id).populate({
+         path:'comments', 
+         populate:{path: 'userID', model:'User'} })
+        .exec( (err, attraction) => {
+            if(err){
+                res.status(400).json(err)
+                return
+            }
+            res.render('attractions/show', {attraction, user: req.user})
+    });
 }
 
 // New = render form to create new attraction
@@ -49,7 +40,6 @@ let showNewForm = (req, res, next) => {
 // Create = create a new attraction in the database
 async function create(req, res) {
     try {
-        console.log(req.body)
         const result = await cloudinary.uploader.upload(req.file.path)
         
         let attraction = new Attraction({

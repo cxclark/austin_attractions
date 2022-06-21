@@ -93,38 +93,6 @@
       </div>
 
     </div>
-
-
-    
-    <div class="row">
-      <div class="col">
-        <p class="lead">
-          User
-        </p>
-      </div>
-      <div class="col-6">
-        <p class="lead">
-          Comment
-        </p>
-      </div>   
-      <div class="col">
-        <p class="lead">
-          Rating
-        </p>
-      </div> 
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <div class="h2"><i class="bi bi-person-circle"></i></div>
-      </div>
-      <div class="col-6">
-        <%= comment.content %>
-      </div>   
-      <div class="col">
-        <%= comment.rating %> / 5
-      </div> 
-    </div>
     <% }); %>
 
   <!-- If there are no reviews for this attraction -->
@@ -133,5 +101,5 @@
   <% } %>
 
 </section>
-  
-  
+
+<%- include('../partials/footer') %>

@@ -1,34 +1,36 @@
 <%- include('../partials/header') %>
+<body>
+  <section class="p-3 text-center">
 
-<section class="p-3 text-center">
+    <h1 class="p-3 emphasis-font">Things To Do In Austin, TX</h1>
 
-  <h1 class="p-3 emphasis-font">Things To Do In Austin, TX</h1>
+    <div class="container">
+      <div class="row g-4">    
+        <% attractions.forEach(function(attraction) { %>
+        <div class="col-12 col-md-6 col-lg-4">
 
-  <div class="container">
-    <div class="row g-4">    
-      <% attractions.forEach(function(attraction) { %>
-      <div class="col-12 col-md-6 col-lg-4">
-
-        <div class="card border border-5" style="width: 26rem;">
-          <a href="/attractions/<%= attraction._id %>">
-            <img class="card-img-top resized-sm" src= <%= attraction.image %> />
-          </a>
-          <div class="card-body">
-            <h5 class="card-title"><%= attraction.title %></h5>
-            <p class="text-muted"><%= attraction.address %></p>
-            <p class="card-text module"><%= attraction.description %></p>
-            <p class="mb-0">
-              <a href="/attractions/<%= attraction._id %>">More...</a>
-            </p>
+          <div class="card border border-5" style="width: 26rem;">
+            <a href="/attractions/<%= attraction._id %>">
+              <img class="card-img-top resized-sm" src= <%= attraction.image %> />
+            </a>
+            <div class="card-body">
+              <h5 class="card-title"><%= attraction.title %></h5>
+              <p class="text-muted"><%= attraction.address %></p>
+              <p class="card-text module"><%= attraction.description %></p>
+              <p class="mb-0">
+                <a href="/attractions/<%= attraction._id %>">More...</a>
+              </p>
+            </div>
           </div>
-        </div>
 
+        </div>
+        <% }); %>
       </div>
-      <% }); %>
+
     </div>
 
-  </div>
+  </section>  
+</body>
 
-</section>
 
 <%- include('../partials/footer') %>
