@@ -1,8 +1,9 @@
+/* Add padding for fixed footer */
 body {
-    /* add padding for fixed footer */
     padding-bottom: 100px;
 }
 
+/* Add styling for truncated text */
 .module {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -12,22 +13,26 @@ body {
     white-space: normal;
 }
 
+/* Small image sizing */
 .resized-sm {
     height: 300px;
     width: 25rem;
     object-fit: cover;
 }
 
+/* Medium image sizing */
 .resized-md {
     height: 450px;
     width: 630px;
     object-fit: cover;
 }
 
+/* Set button width */
 .btn-width {
     width: 80px;
 }
 
+/* Set font for titles */
 .emphasis-font {
     font-family: 'Lakki Reddy';
 }
