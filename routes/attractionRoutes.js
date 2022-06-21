@@ -1,5 +1,8 @@
+// Require express
 const express = require('express');
+// Create a new router object
 const router = express.Router();
+// Require attraction controller
 const attractionCtrl = require('../controllers/attractionController');
 
 // Require multer for image uploads
