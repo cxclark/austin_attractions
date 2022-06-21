@@ -26,6 +26,18 @@ The app can be accessed here: [austin-attractions.herokuapp.com](https://austin-
 * Node.js
 * OAuth
 
+### List of Routes
+Attraction routes:
+- Index: /attractions (GET: display all attractions)
+- New: /attractions/new (GET: renders form to create a new attraction)
+- Create: /attractions (POST: make a new attraction)
+- Show: /attractions/:id (GET: show details of one attraction)
+- Edit: /attractions/:id/edit (GET: render the update page)
+- Update: /attractions/:id (PATCH: updates the current attraction)
+- Delete: /attractions/:id (DELETE: deletes current attraction)
+Comment routes:
+- Create: /attractions/:id/comments (POST: make a comment on an attraction)
+
 ### User Stories
 - User can visit the website and view Austin attractions.
 - User can click through and see attraction details and comments from other visitors.
