@@ -36,7 +36,7 @@ The app can be accessed here: [austin-attractions.herokuapp.com](https://austin-
 
 ### Original Wireframes
 ![1_index](./public/assets/wireframes/1_index.JPG =250x)
-![2_show](./public/assets/wireframes/2_show.JPG=250x)
+![2_show](./public/assets/wireframes/2_show.JPG =250x)
 
 ### Unsolved Problems/Next Steps
 1. Build in logic so that only logged in users can add commments.
