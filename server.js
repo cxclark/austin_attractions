@@ -1,6 +1,3 @@
-// 6-16: Update passport-local https://www.passportjs.org/packages/passport-local/
-// 6-16: Use bcrypt for passwords: https://www.npmjs.com/package/bcrypt
-// DONE 6-18: Finalize User Model & Pages
 // DONE 6-20: Clean up Comments section
 // DONE 6-20: Clean up Code and Prep Submission
 // DONE 6-20: Edit User/Login/Logout if time permits
