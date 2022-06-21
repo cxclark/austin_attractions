@@ -1,48 +1,51 @@
 <%- include('../partials/header') %>
+<body>
+  <section class="p-3">
 
-<section class="p-3">
-
-  <div class="container">
-    
-    <div class="text-center">
-      <h1 class="p-3 emphasis-font">Add New Attraction</h1>
-    </div>
-    
-    <div class="row justify-content-center my-5">
-      <div class="col-lg-6">
+    <div class="container">
       
-        <form enctype="multipart/form-data" action="/attractions" method="POST">
-
-          <label class="form-label">Title:</label>
-          <input type="text" class="form-control" name="title" placeholder="e.g. Texas State Capitol">
-          
-          <label class="form-label">Address:</label>
-          <input type="text" class="form-control" name="address" placeholder="e.g. 1100 Congress Ave">
-
-          <div class="mb-3 mt-4">
-            <label class="form-label">Description</label>
-            <textarea 
-              type="text" 
-              class="form-control" 
-              name="description" 
-              rows="3">
-            </textarea>
-          </div>
-          
-          <div class="mb-5">
-            <label class="form-label">Image:</label>
-            <input class="form-control text-muted" type="file" name="image">
-          </div>
-
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary">Add Attraction</button>
-          </div>
-
-        </form>
-
+      <div class="text-center">
+        <h1 class="p-3 emphasis-font">Add New Attraction</h1>
       </div>
+      
+      <div class="row justify-content-center my-5">
+        <div class="col-lg-6">
+        
+          <form enctype="multipart/form-data" action="/attractions" method="POST">
+
+            <label class="form-label">Title:</label>
+            <input type="text" class="form-control" name="title" placeholder="e.g. Texas State Capitol">
+            
+            <label class="form-label">Address:</label>
+            <input type="text" class="form-control" name="address" placeholder="e.g. 1100 Congress Ave">
+
+            <div class="mb-3 mt-4">
+              <label class="form-label">Description</label>
+              <textarea 
+                type="text" 
+                class="form-control" 
+                name="description" 
+                rows="3">
+              </textarea>
+            </div>
+            
+            <div class="mb-5">
+              <label class="form-label">Image:</label>
+              <input class="form-control text-muted" type="file" name="image">
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Add Attraction</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
     </div>
 
-  </div>
+  </section>  
+</body>
 
-</section>
+<%- include('../partials/footer') %>

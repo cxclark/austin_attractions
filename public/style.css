@@ -1,9 +1,9 @@
 body {
+    /* add padding for fixed footer */
     padding-bottom: 100px;
 }
 
 .module {
-    /* width: 250px; */
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box !important;
@@ -14,7 +14,6 @@ body {
 
 .resized-sm {
     height: 300px;
-    /* width: 406px; */
     width: 25rem;
     object-fit: cover;
 }

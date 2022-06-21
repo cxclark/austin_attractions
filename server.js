@@ -1,11 +1,9 @@
 // 6-16: Update passport-local https://www.passportjs.org/packages/passport-local/
 // 6-16: Use bcrypt for passwords: https://www.npmjs.com/package/bcrypt
-// 6/17: Delete Procfile?
-// 6-18: Finalize User Model & Pages
-
-// 6-20: Clean up Comments section
-// 6-20: Clean up Code and Prep Submission
-// 6-20: Edit User/Login/Logout if time permits
+// DONE 6-18: Finalize User Model & Pages
+// DONE 6-20: Clean up Comments section
+// DONE 6-20: Clean up Code and Prep Submission
+// DONE 6-20: Edit User/Login/Logout if time permits
 
 // Load environment variables in .env file to make them available
 const dotenv = require('dotenv');
@@ -49,15 +47,6 @@ app.use(passport.session());
 // Middlewares end here
 
 // Routes start here
-
-// TEST CODE WHEN TROUBLESHOOTING OAUTH
-// DO I NEED THIS CODE TO ASSIGN THE CORRECT VALUE TO REQ.USER?
-// app.use(function (req, res, next) {
-//     res.locals.user = req.user;
-//     console.log(req.user)
-//     next();
-//     }); 
-    
 // Redirect home path to index page
 app.get('/', (req, res) => {
     res.redirect('/attractions')
