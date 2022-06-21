@@ -47,8 +47,8 @@ The app can be accessed here: [austin-attractions.herokuapp.com](https://austin-
 - User can login using Google.
 
 ### Original Wireframes
-<img src="./public/assets/wireframes/1_index.JPG" width="550">
-<img src="./public/assets/wireframes/2_show.JPG" width="550">
+<img src="./public/assets/wireframes/1_index.JPG" width="600">
+<img src="./public/assets/wireframes/2_show.JPG" width="600">
 
 ### Unsolved Problems/Next Steps
 1. Build in logic so that only logged in users can add commments.
