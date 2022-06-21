@@ -12,7 +12,7 @@ In my app, users can:
 1. Logout
 1. Add reviews (comments + ratings) for an attraction
 
-The app can be accessed [here](https://austin-attractions.herokuapp.com/).
+The app can be accessed here: [austin-attractions.herokuapp.com](https://austin-attractions.herokuapp.com/).
 
 ### Technologies
 * Cloudinary
