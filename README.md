@@ -27,7 +27,7 @@ The app can be accessed here: [austin-attractions.herokuapp.com](https://austin-
 * OAuth
 
 ### List of Routes
-Attraction routes:
+#### Attraction routes:
 - Index: /attractions (GET: display all attractions)
 - New: /attractions/new (GET: renders form to create a new attraction)
 - Create: /attractions (POST: make a new attraction)
@@ -35,7 +35,7 @@ Attraction routes:
 - Edit: /attractions/:id/edit (GET: render the update page)
 - Update: /attractions/:id (PATCH: updates the current attraction)
 - Delete: /attractions/:id (DELETE: deletes current attraction)
-Comment routes:
+#### Comment routes:
 - Create: /attractions/:id/comments (POST: make a comment on an attraction)
 
 ### User Stories
