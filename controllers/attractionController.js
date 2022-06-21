@@ -1,10 +1,9 @@
-// Bring in attraction model
+// Require Attraction model
 const Attraction = require('../models/attractions')
 // Require path to enable working with the file system
 const path = require('path');
 // Require Cloudinary
 const cloudinary = require('../utils/cloudinary');
-
 
 // Index = get all attractions
 let index = (req, res, next) => {
