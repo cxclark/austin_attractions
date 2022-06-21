@@ -4,11 +4,15 @@ The purpose of this project was to build a full-stack CRUD (Create, Read, Update
 In my app, users can:
 
 1. View all attractions
-2. See details on a single attraction
-3. 
+2. See details of a single attraction
+3. Edit details of an attraction
+4. Delete an attraction
+5. Add an attraction
+6. Login with Google
+7. Add reviews (comments + ratings) 
 
 
-### Next Steps
+### Unsolved Problems/Next Steps
 1. Build in logic so that only logged in users can add commments
-2. Add [`passport-local`](https://www.passportjs.org/packages/passport-local/) to my `passport.js` to give users the option to login locally.
-3. Add [`bcrypt`](https://www.npmjs.com/package/bcrypt) for password encryption.
+1. Add [`passport-local`](https://www.passportjs.org/packages/passport-local/) to my `passport.js` to give users the option to login locally.
+1. Add [`bcrypt`](https://www.npmjs.com/package/bcrypt) for password encryption.
