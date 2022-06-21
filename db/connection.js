@@ -1,6 +1,7 @@
 // Require Mongoose:
 const mongoose = require('mongoose')
 
+
 const dbURI = process.env.MONGO_URI || `mongodb://${dbConfig.HOST}:${db.config.PORT}/${dbConfig.DB}`
 
 // Connect to attractions database
