@@ -4,6 +4,7 @@ dotenv.config();
 
 const express = require('express');
 const path = require('path');
+// PORT 8080 is generally used by web servers
 const PORT = process.env.PORT || 8080;
 const app = express();
 const attractionRoutes = require('./routes/attractionRoutes');
