@@ -16,6 +16,7 @@ The app can be accessed here: [austin-attractions.herokuapp.com](https://austin-
 
 ### Technologies
 * Cloudinary
+* CSS
 * Express
 * EJS
 * Heroku
